@@ -17,8 +17,8 @@ export function Footer() {
               travel, work, home and everywhere in between.
             </p>
             <p className="text-midnight-700 mt-6 text-sm font-medium">
-              Discover thoughtful power and everyday essentials, or connect
-              with us at info@aanuni.com.
+              Discover thoughtful power and everyday essentials, or connect with
+              us at info@aanuni.com.
             </p>
           </div>
 
