@@ -3,13 +3,13 @@ import { test, expect } from "@playwright/test";
 test.describe("Desktop header navigation", () => {
   test.use({ viewport: { width: 1280, height: 800 } });
 
-  test("pre-launch navigation points to real homepage sections", async ({
+  test("navigation points to real homepage sections", async ({
     page,
   }) => {
     await page.goto("/");
     const nav = page.getByRole("navigation", { name: "Primary" });
     await expect(
-      nav.getByRole("link", { name: "What’s coming" }),
+      nav.getByRole("link", { name: "Our collection" }),
     ).toHaveAttribute("href", "/#collection");
     await expect(
       nav.getByRole("link", { name: "Our philosophy" }),
@@ -37,14 +37,14 @@ test.describe("Mobile navigation", () => {
     await expect(heading).not.toBeVisible();
   });
 
-  test("mobile menu contains only working pre-launch links", async ({
+  test("mobile menu contains only working links", async ({
     page,
   }) => {
     await page.goto("/");
     await page.getByRole("button", { name: "Open menu" }).click();
     const menu = page.locator('dialog[aria-labelledby="mobile-menu-heading"]');
     await expect(
-      menu.getByRole("link", { name: "What’s coming" }),
+      menu.getByRole("link", { name: "Our collection" }),
     ).toBeVisible();
     await expect(menu.getByRole("link", { name: "Contact" })).toHaveAttribute(
       "href",
