@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { BrandSpark } from "@/components/brand/BrandSpark";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 
@@ -75,7 +76,9 @@ function ArrowIcon() {
 function EnergyMark({ className = "" }: { className?: string }) {
   return (
     <span className={`energy-mark ${className}`} aria-hidden="true">
-      <span className="energy-mark__core" />
+      <span className="energy-mark__core">
+        <BrandSpark size={26} />
+      </span>
       <span className="energy-mark__orbit energy-mark__orbit--one" />
       <span className="energy-mark__orbit energy-mark__orbit--two" />
     </span>
@@ -95,7 +98,7 @@ export default function Home() {
           <div className="grid items-center gap-16 lg:grid-cols-[1.08fr_0.92fr] lg:gap-6">
             <div className="relative z-10 max-w-3xl">
               <p className="mb-7 flex items-center gap-3 text-xs font-semibold tracking-[0.22em] text-white/60 uppercase sm:text-sm">
-                <span className="bg-energy-500 size-1.5 rounded-full shadow-[0_0_18px_var(--color-energy)]" />
+                <BrandSpark size={12} />
                 Technology, made graceful
               </p>
               <h1 className="text-[clamp(3.75rem,9vw,8.5rem)] leading-[0.84] font-semibold tracking-[-0.075em]">
@@ -129,7 +132,7 @@ export default function Home() {
                 <div className="absolute top-[17%] left-1/2 h-[65%] w-[42%] -translate-x-1/2 rotate-[9deg] rounded-[2.4rem] border border-white/20 bg-gradient-to-br from-white/20 via-white/6 to-transparent shadow-[inset_-12px_-12px_25px_rgba(0,0,0,0.22),0_35px_50px_rgba(0,0,0,0.38)]">
                   <div className="absolute top-7 left-1/2 h-1.5 w-14 -translate-x-1/2 rounded-full bg-black/35" />
                   <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-center">
-                    <span className="bg-energy-500 mx-auto block size-2 rounded-full shadow-[0_0_16px_var(--color-energy)]" />
+                    <BrandSpark size={12} className="mx-auto" />
                     <span className="mt-3 block text-[0.55rem] tracking-[0.32em] text-white/50 uppercase">
                       aanuni
                     </span>
@@ -252,7 +255,7 @@ export default function Home() {
                       {accessory.title}
                     </h3>
                   </div>
-                  <span className="bg-energy-500 size-2 shrink-0 rounded-full shadow-[0_0_18px_var(--color-energy)]" />
+                  <BrandSpark size={20} />
                 </div>
               </article>
             ))}
