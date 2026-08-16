@@ -25,5 +25,6 @@ describe("Logo", () => {
     render(<Logo height={40} />);
     const img = screen.getByRole("img", { name: "aanuni" }) as HTMLImageElement;
     expect(img.width).toBeCloseTo(169, 0);
+    expect(img).toHaveStyle({ width: "169px", height: "40px" });
   });
 });
