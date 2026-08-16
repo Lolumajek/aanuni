@@ -1,0 +1,99 @@
+/**
+ * AANUNI design tokens.
+ *
+ * Tailwind v4 reads this `@theme` block to generate utility classes (e.g.
+ * `bg-midnight`, `text-energy`, `rounded-brand-lg`). Keep this file the
+ * single source of truth for color, type, spacing, radius, shadow,
+ * transition and container tokens — components should not hard-code raw
+ * hex values or pixel sizes.
+ */
+@theme {
+  /* --- Brand colour --------------------------------------------------- */
+  --color-midnight: #061b3a;
+  --color-midnight-50: #eef1f6;
+  --color-midnight-100: #d3daea;
+  --color-midnight-200: #a7b6d4;
+  --color-midnight-300: #7b91bf;
+  --color-midnight-400: #4f6da9;
+  --color-midnight-500: #2c4a86;
+  --color-midnight-600: #123667;
+  --color-midnight-700: #0a2750;
+  --color-midnight-800: #061b3a;
+  --color-midnight-900: #041228;
+
+  --color-energy: #ff6a00;
+  --color-energy-50: #fff2e8;
+  --color-energy-100: #ffdec2;
+  --color-energy-200: #ffbd8a;
+  --color-energy-300: #ff9c52;
+  --color-energy-400: #ff8626;
+  --color-energy-500: #ff6a00;
+  --color-energy-600: #cc5500;
+  --color-energy-700: #993f00;
+
+  --color-ink: #111111;
+  --color-paper: #ffffff;
+
+  /* Soft neutral surfaces — used for section backgrounds, cards, dividers */
+  --color-surface-0: #ffffff;
+  --color-surface-1: #f7f8fa;
+  --color-surface-2: #eef0f4;
+  --color-surface-3: #e2e5eb;
+  --color-border: #dde1e8;
+
+  /* Semantic status (used sparingly — orange remains reserved for
+     primary actions / energy state, not general "success" UI) */
+  --color-success: #1f7a4d;
+  --color-warning: #b8860b;
+  --color-danger: #c0362c;
+
+  /* --- Typography ------------------------------------------------------ */
+  --font-sans:
+    var(--font-manrope), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+
+  /* --- Radii — rounded, consistent with the wordmark's continuous curve */
+  --radius-brand-sm: 0.375rem;
+  --radius-brand-md: 0.625rem;
+  --radius-brand-lg: 1rem;
+  --radius-brand-xl: 1.5rem;
+  --radius-brand-full: 999px;
+
+  /* --- Shadows — soft, low-contrast, premium rather than heavy --------- */
+  --shadow-brand-sm: 0 1px 2px rgba(6, 27, 58, 0.06);
+  --shadow-brand-md: 0 4px 16px rgba(6, 27, 58, 0.08);
+  --shadow-brand-lg: 0 12px 32px rgba(6, 27, 58, 0.12);
+  --shadow-brand-focus: 0 0 0 3px rgba(255, 106, 0, 0.45);
+
+  /* --- Motion — restrained, respects prefers-reduced-motion at the
+     component level */
+  --ease-brand: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 320ms;
+
+  /* --- Containers -------------------------------------------------------*/
+  --container-content: 80rem; /* 1280px */
+  --container-narrow: 48rem; /* 768px */
+  --container-wide: 96rem; /* 1536px */
+
+  /* --- Breakpoints (Tailwind defaults reaffirmed explicitly) ----------- */
+  --breakpoint-xs: 30rem;
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 96rem;
+}
