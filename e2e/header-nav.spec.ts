@@ -3,9 +3,7 @@ import { test, expect } from "@playwright/test";
 test.describe("Desktop header navigation", () => {
   test.use({ viewport: { width: 1280, height: 800 } });
 
-  test("navigation points to real homepage sections", async ({
-    page,
-  }) => {
+  test("navigation points to real homepage sections", async ({ page }) => {
     await page.goto("/");
     const nav = page.getByRole("navigation", { name: "Primary" });
     await expect(
@@ -37,9 +35,7 @@ test.describe("Mobile navigation", () => {
     await expect(heading).not.toBeVisible();
   });
 
-  test("mobile menu contains only working links", async ({
-    page,
-  }) => {
+  test("mobile menu contains only working links", async ({ page }) => {
     await page.goto("/");
     await page.getByRole("button", { name: "Open menu" }).click();
     const menu = page.locator('dialog[aria-labelledby="mobile-menu-heading"]');
