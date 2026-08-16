@@ -1,3 +1,5 @@
+import Image from "next/image";
+import { BrandSpark } from "@/components/brand/BrandSpark";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 
@@ -34,6 +36,29 @@ const principles = [
   ["Made for every day", "Durable by design, intuitive from the first touch."],
 ];
 
+const accessories = [
+  {
+    title: "Magnetic power",
+    category: "Phone accessories",
+    image: "/products/magnetic-power-bank.webp",
+  },
+  {
+    title: "GaN charging",
+    category: "Phone accessories",
+    image: "/products/gan-charger-cables.webp",
+  },
+  {
+    title: "Connected workspace",
+    category: "Computer accessories",
+    image: "/products/laptop-dock.webp",
+  },
+  {
+    title: "Wireless control",
+    category: "Computer accessories",
+    image: "/products/wireless-keyboard-mouse.webp",
+  },
+];
+
 function ArrowIcon() {
   return (
     <svg aria-hidden="true" viewBox="0 0 20 20" className="size-4 fill-none">
@@ -51,7 +76,9 @@ function ArrowIcon() {
 function EnergyMark({ className = "" }: { className?: string }) {
   return (
     <span className={`energy-mark ${className}`} aria-hidden="true">
-      <span className="energy-mark__core" />
+      <span className="energy-mark__core">
+        <BrandSpark size={26} />
+      </span>
       <span className="energy-mark__orbit energy-mark__orbit--one" />
       <span className="energy-mark__orbit energy-mark__orbit--two" />
     </span>
@@ -71,7 +98,7 @@ export default function Home() {
           <div className="grid items-center gap-16 lg:grid-cols-[1.08fr_0.92fr] lg:gap-6">
             <div className="relative z-10 max-w-3xl">
               <p className="mb-7 flex items-center gap-3 text-xs font-semibold tracking-[0.22em] text-white/60 uppercase sm:text-sm">
-                <span className="bg-energy-500 size-1.5 rounded-full shadow-[0_0_18px_var(--color-energy)]" />
+                <BrandSpark size={12} />
                 Technology, made graceful
               </p>
               <h1 className="text-[clamp(3.75rem,9vw,8.5rem)] leading-[0.84] font-semibold tracking-[-0.075em]">
@@ -87,7 +114,7 @@ export default function Home() {
               </p>
               <div className="mt-9 flex flex-wrap gap-3">
                 <Button href="#collection" size="lg">
-                  Explore what&apos;s coming <ArrowIcon />
+                  Explore the collection <ArrowIcon />
                 </Button>
                 <Button
                   href="#philosophy"
@@ -105,7 +132,7 @@ export default function Home() {
                 <div className="absolute top-[17%] left-1/2 h-[65%] w-[42%] -translate-x-1/2 rotate-[9deg] rounded-[2.4rem] border border-white/20 bg-gradient-to-br from-white/20 via-white/6 to-transparent shadow-[inset_-12px_-12px_25px_rgba(0,0,0,0.22),0_35px_50px_rgba(0,0,0,0.38)]">
                   <div className="absolute top-7 left-1/2 h-1.5 w-14 -translate-x-1/2 rounded-full bg-black/35" />
                   <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-center">
-                    <span className="bg-energy-500 mx-auto block size-2 rounded-full shadow-[0_0_16px_var(--color-energy)]" />
+                    <BrandSpark size={12} className="mx-auto" />
                     <span className="mt-3 block text-[0.55rem] tracking-[0.32em] text-white/50 uppercase">
                       aanuni
                     </span>
@@ -176,6 +203,93 @@ export default function Home() {
             ))}
           </div>
         </Container>
+      </section>
+
+      <section
+        aria-labelledby="presence-heading"
+        className="border-midnight-200 bg-surface-0 border-y py-14 sm:py-18"
+      >
+        <Container>
+          <div className="grid gap-8 sm:grid-cols-[1fr_auto] sm:items-center">
+            <div className="flex items-center gap-4">
+              <BrandSpark size={22} />
+              <div>
+                <p className="text-energy-600 text-xs font-semibold tracking-[0.2em] uppercase">
+                  Our presence
+                </p>
+                <h2
+                  id="presence-heading"
+                  className="text-midnight-900 mt-2 text-2xl font-semibold tracking-[-0.035em] sm:text-3xl"
+                >
+                  Connected across North America.
+                </h2>
+              </div>
+            </div>
+            <div className="text-midnight-900 flex items-center gap-5 text-lg font-semibold sm:gap-8 sm:text-xl">
+              <span>Canada</span>
+              <span className="bg-midnight-200 h-6 w-px" aria-hidden="true" />
+              <span>United States</span>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section
+        aria-labelledby="accessories-heading"
+        className="bg-midnight-900 overflow-hidden py-24 text-white sm:py-32"
+      >
+        <Container>
+          <div className="flex flex-col justify-between gap-8 sm:flex-row sm:items-end">
+            <div>
+              <p className="text-energy-500 text-xs font-semibold tracking-[0.2em] uppercase">
+                Phone &amp; computer accessories
+              </p>
+              <h2
+                id="accessories-heading"
+                className="mt-6 max-w-3xl text-4xl leading-[1.02] font-semibold tracking-[-0.045em] sm:text-6xl"
+              >
+                Made to move with every part of your day.
+              </h2>
+            </div>
+            <p className="max-w-sm text-sm leading-6 text-white/55 sm:text-right">
+              Thoughtful essentials for your phone, computer and everything in
+              between.
+            </p>
+          </div>
+        </Container>
+
+        <div className="accessory-marquee mt-14 sm:mt-20">
+          <div className="accessory-marquee__track">
+            {[...accessories, ...accessories].map((accessory, index) => (
+              <article
+                key={`${accessory.title}-${index}`}
+                aria-hidden={index >= accessories.length}
+                className="accessory-card overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.045]"
+              >
+                <div className="relative aspect-[3/2] overflow-hidden">
+                  <Image
+                    src={accessory.image}
+                    alt={index < accessories.length ? accessory.title : ""}
+                    fill
+                    sizes="(max-width: 640px) 82vw, 34rem"
+                    className="object-cover transition-transform duration-700 hover:scale-[1.025]"
+                  />
+                </div>
+                <div className="flex items-end justify-between gap-5 p-6 sm:p-7">
+                  <div>
+                    <p className="text-energy-500 text-[0.65rem] font-semibold tracking-[0.18em] uppercase">
+                      {accessory.category}
+                    </p>
+                    <h3 className="mt-2 text-xl font-semibold tracking-[-0.025em] sm:text-2xl">
+                      {accessory.title}
+                    </h3>
+                  </div>
+                  <BrandSpark size={20} />
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
       </section>
 
       <section
@@ -253,7 +367,7 @@ export default function Home() {
             Meet a more considered collection of power and everyday essentials.
           </p>
           <Button
-            href="mailto:info@aanuni.com?subject=AANUNI%20launch%20updates"
+            href="mailto:info@aanuni.com?subject=Hello%20AANUNI"
             variant="secondary"
             size="lg"
             className="mt-9"

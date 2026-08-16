@@ -13,7 +13,7 @@ export function HeaderClient({ primary }: { primary: PrimaryNavItem[] }) {
 
   return (
     <header className="border-border bg-surface-0 sticky top-0 z-30 border-b">
-      <Container className="flex h-16 items-center justify-between gap-4">
+      <Container className="flex h-[4.5rem] items-center justify-between gap-4 lg:h-20">
         <div className="flex items-center gap-2">
           <button
             type="button"
@@ -24,7 +24,8 @@ export function HeaderClient({ primary }: { primary: PrimaryNavItem[] }) {
             <MenuIcon />
           </button>
           <Link href="/" aria-label="aanuni home" className="flex items-center">
-            <Logo height={24} priority />
+            <Logo height={32} priority className="lg:hidden" />
+            <Logo height={46} priority className="hidden lg:block" />
           </Link>
         </div>
 

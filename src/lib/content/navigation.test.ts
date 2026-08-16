@@ -8,7 +8,7 @@ describe("getNavigation", () => {
     expect(nav.footer.length).toBeGreaterThan(0);
   });
 
-  it("uses only working homepage and email destinations for pre-launch", () => {
+  it("uses only working homepage and email destinations", () => {
     const nav = getNavigation();
     const hrefs = [
       ...nav.primary,
