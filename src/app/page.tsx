@@ -86,8 +86,8 @@ export default function Home() {
                 perform. Made to belong.
               </p>
               <div className="mt-9 flex flex-wrap gap-3">
-                <Button href="/collections/all" size="lg">
-                  Explore the collection <ArrowIcon />
+                <Button href="#collection" size="lg">
+                  Explore what&apos;s coming <ArrowIcon />
                 </Button>
                 <Button
                   href="#philosophy"
@@ -126,7 +126,7 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="bg-surface-0 py-24 sm:py-32 lg:py-40">
+      <section id="collection" className="bg-surface-0 py-24 sm:py-32 lg:py-40">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-24">
             <p className="text-energy-600 text-xs font-semibold tracking-[0.2em] uppercase">
@@ -146,7 +146,7 @@ export default function Home() {
             {categories.map((category) => (
               <a
                 key={category.title}
-                href="/collections/all"
+                href="mailto:info@aanuni.com?subject=AANUNI%20product%20interest"
                 className={`product-card group rounded-brand-xl relative isolate min-h-[31rem] overflow-hidden p-7 text-white sm:p-9 ${category.className}`}
               >
                 <div
@@ -228,12 +228,12 @@ export default function Home() {
                 ))}
               </div>
               <Button
-                href="/pages/about"
+                href="mailto:info@aanuni.com?subject=Hello%20AANUNI"
                 variant="outline"
                 size="lg"
                 className="mt-10"
               >
-                Discover our story <ArrowIcon />
+                Start a conversation <ArrowIcon />
               </Button>
             </div>
           </div>
@@ -253,12 +253,12 @@ export default function Home() {
             Meet a more considered collection of power and everyday essentials.
           </p>
           <Button
-            href="/collections/all"
+            href="mailto:info@aanuni.com?subject=AANUNI%20launch%20updates"
             variant="secondary"
             size="lg"
             className="mt-9"
           >
-            Shop AANUNI <ArrowIcon />
+            Contact AANUNI <ArrowIcon />
           </Button>
         </Container>
       </section>
