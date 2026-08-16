@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
+import { AnnouncerProvider } from "@/components/a11y/Announcer";
+import { CartUIProvider } from "@/components/cart/CartUIProvider";
+import { CartDrawer } from "@/components/cart/CartDrawer";
+import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -24,7 +30,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
-        {children}
+        <AnnouncerProvider>
+          <CartUIProvider>
+            <AnnouncementBar />
+            <Header />
+            {children}
+            <Footer />
+            <CartDrawer />
+          </CartUIProvider>
+        </AnnouncerProvider>
       </body>
     </html>
   );
