@@ -46,7 +46,8 @@ export function Logo({
       width={width}
       height={height}
       priority={priority}
-      className={clsx("h-auto w-auto", className)}
+      style={{ width: `${width}px`, height: `${height}px` }}
+      className={clsx("shrink-0 object-contain", className)}
     />
   );
 }
