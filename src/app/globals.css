@@ -30,6 +30,197 @@
     color: var(--color-midnight-800);
   }
 
+  .hero-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+    background-size: 5rem 5rem;
+    mask-image: linear-gradient(to bottom, black, transparent 78%);
+  }
+
+  .hero-glow {
+    background:
+      radial-gradient(
+        circle at 76% 42%,
+        rgba(255, 106, 0, 0.16),
+        transparent 28%
+      ),
+      radial-gradient(
+        circle at 72% 48%,
+        rgba(79, 109, 169, 0.18),
+        transparent 48%
+      );
+  }
+
+  .energy-mark {
+    display: block;
+    width: 10rem;
+    height: 10rem;
+  }
+  .energy-mark__core,
+  .energy-mark__orbit {
+    position: absolute;
+    inset: 50% auto auto 50%;
+    display: block;
+    border-radius: 999px;
+    transform: translate(-50%, -50%);
+  }
+  .energy-mark__core {
+    width: 1rem;
+    height: 1rem;
+    background: var(--color-energy);
+    box-shadow: 0 0 2rem rgba(255, 106, 0, 0.9);
+  }
+  .energy-mark__orbit {
+    border: 1px solid rgba(255, 255, 255, 0.22);
+  }
+  .energy-mark__orbit--one {
+    width: 7.5rem;
+    height: 2.6rem;
+    rotate: 25deg;
+  }
+  .energy-mark__orbit--two {
+    width: 7.5rem;
+    height: 2.6rem;
+    rotate: -25deg;
+  }
+
+  .product-card {
+    background: var(--color-midnight-900);
+  }
+  .product-card__visual {
+    transition: transform var(--duration-slow) var(--ease-brand);
+  }
+  .product-card:hover .product-card__visual {
+    transform: scale(1.025);
+  }
+  .product-card--power .product-card__visual {
+    background:
+      radial-gradient(
+        circle at 50% 43%,
+        rgba(255, 106, 0, 0.5),
+        transparent 3%
+      ),
+      linear-gradient(
+        120deg,
+        transparent 32%,
+        rgba(255, 255, 255, 0.14) 33%,
+        transparent 48%
+      ),
+      radial-gradient(
+        ellipse at 50% 43%,
+        rgba(255, 106, 0, 0.22),
+        transparent 28%
+      ),
+      linear-gradient(150deg, #0a2750, #041228 72%);
+  }
+  .product-card--power .product-card__visual::before {
+    content: "";
+    position: absolute;
+    left: 27%;
+    top: 13%;
+    width: 46%;
+    height: 49%;
+    rotate: -8deg;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 2.25rem;
+    background: linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.14),
+      rgba(0, 0, 0, 0.25)
+    );
+    box-shadow: 1rem 2rem 4rem rgba(0, 0, 0, 0.3);
+  }
+  .product-card--charge .product-card__visual {
+    background:
+      radial-gradient(
+        circle at 66% 27%,
+        rgba(255, 106, 0, 0.45),
+        transparent 2%
+      ),
+      radial-gradient(
+        circle at 54% 37%,
+        rgba(255, 255, 255, 0.14),
+        transparent 23%
+      ),
+      linear-gradient(145deg, #102b53, #061b3a 52%, #041228);
+  }
+  .product-card--charge .product-card__visual::before,
+  .product-card--charge .product-card__visual::after {
+    content: "";
+    position: absolute;
+    top: 15%;
+    width: 28%;
+    height: 35%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1.6rem;
+    background: linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.18),
+      rgba(0, 0, 0, 0.22)
+    );
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.28);
+  }
+  .product-card--charge .product-card__visual::before {
+    left: 27%;
+    rotate: -14deg;
+  }
+  .product-card--charge .product-card__visual::after {
+    left: 50%;
+    top: 20%;
+    rotate: 12deg;
+  }
+  .product-card--connect .product-card__visual {
+    background:
+      radial-gradient(
+        circle at 49% 30%,
+        rgba(255, 106, 0, 0.4),
+        transparent 2%
+      ),
+      repeating-radial-gradient(
+        circle at 50% 32%,
+        transparent 0 2.7rem,
+        rgba(255, 255, 255, 0.08) 2.75rem 2.8rem
+      ),
+      linear-gradient(160deg, #0a2750, #041228 70%);
+  }
+  .product-card--connect .product-card__visual::before {
+    content: "";
+    position: absolute;
+    left: 48%;
+    top: 12%;
+    width: 1.15rem;
+    height: 43%;
+    border-radius: 999px;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.65),
+      rgba(255, 255, 255, 0.12)
+    );
+    box-shadow: 0 0 2rem rgba(255, 255, 255, 0.1);
+  }
+  .philosophy-orbit {
+    background:
+      radial-gradient(
+        circle at 50% 50%,
+        rgba(255, 106, 0, 0.18),
+        transparent 7%
+      ),
+      repeating-radial-gradient(
+        circle at 50% 50%,
+        transparent 0 5rem,
+        rgba(255, 255, 255, 0.055) 5.05rem 5.1rem
+      ),
+      radial-gradient(circle at 50% 50%, #123667, #041228 69%);
+  }
+  .cta-rings {
+    background: repeating-radial-gradient(
+      circle at 50% 50%,
+      transparent 0 6rem,
+      rgba(6, 27, 58, 0.09) 6.05rem 6.12rem
+    );
+  }
+
   .skip-link {
     position: absolute;
     left: 1rem;

@@ -15,7 +15,7 @@ export default defineConfig({
     { name: "mobile-safari", use: { ...devices["iPhone 13"] } },
   ],
   webServer: {
-    command: "npm run build && npm run start",
+    command: "npm run build && python3 -m http.server 3000 --directory out",
     url: "http://localhost:3000",
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,

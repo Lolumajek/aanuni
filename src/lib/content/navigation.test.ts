@@ -8,13 +8,16 @@ describe("getNavigation", () => {
     expect(nav.footer.length).toBeGreaterThan(0);
   });
 
-  it("includes a Products mega menu with category, device, and scenario columns", () => {
+  it("uses only working homepage and email destinations for pre-launch", () => {
     const nav = getNavigation();
-    const products = nav.primary.find((item) => item.label === "Products");
-    expect(products?.megaMenu?.columns.map((c) => c.heading)).toEqual([
-      "Shop by category",
-      "Shop by device",
-      "Shop by scenario",
-    ]);
+    const hrefs = [
+      ...nav.primary,
+      ...nav.footer.flatMap((column) => column.links),
+    ].map((link) => link.href);
+    expect(
+      hrefs.every(
+        (href) => href.startsWith("/#") || href.startsWith("mailto:"),
+      ),
+    ).toBe(true);
   });
 });
