@@ -87,7 +87,7 @@ export default function Home() {
               </p>
               <div className="mt-9 flex flex-wrap gap-3">
                 <Button href="#collection" size="lg">
-                  Explore what&apos;s coming <ArrowIcon />
+                  Explore the collection <ArrowIcon />
                 </Button>
                 <Button
                   href="#philosophy"
@@ -253,7 +253,7 @@ export default function Home() {
             Meet a more considered collection of power and everyday essentials.
           </p>
           <Button
-            href="mailto:info@aanuni.com?subject=AANUNI%20launch%20updates"
+            href="mailto:info@aanuni.com?subject=Hello%20AANUNI"
             variant="secondary"
             size="lg"
             className="mt-9"
