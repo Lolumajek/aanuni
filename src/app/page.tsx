@@ -206,6 +206,35 @@ export default function Home() {
       </section>
 
       <section
+        aria-labelledby="presence-heading"
+        className="border-midnight-200 bg-surface-0 border-y py-14 sm:py-18"
+      >
+        <Container>
+          <div className="grid gap-8 sm:grid-cols-[1fr_auto] sm:items-center">
+            <div className="flex items-center gap-4">
+              <BrandSpark size={22} />
+              <div>
+                <p className="text-energy-600 text-xs font-semibold tracking-[0.2em] uppercase">
+                  Our presence
+                </p>
+                <h2
+                  id="presence-heading"
+                  className="text-midnight-900 mt-2 text-2xl font-semibold tracking-[-0.035em] sm:text-3xl"
+                >
+                  Connected across North America.
+                </h2>
+              </div>
+            </div>
+            <div className="text-midnight-900 flex items-center gap-5 text-lg font-semibold sm:gap-8 sm:text-xl">
+              <span>Canada</span>
+              <span className="bg-midnight-200 h-6 w-px" aria-hidden="true" />
+              <span>United States</span>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section
         aria-labelledby="accessories-heading"
         className="bg-midnight-900 overflow-hidden py-24 text-white sm:py-32"
       >
