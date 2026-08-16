@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
 import { AnnouncerProvider } from "@/components/a11y/Announcer";
-import { CartUIProvider } from "@/components/cart/CartUIProvider";
-import { CartDrawer } from "@/components/cart/CartDrawer";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
@@ -30,12 +28,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Skip to main content
         </a>
         <AnnouncerProvider>
-          <CartUIProvider>
-            <Header />
-            {children}
-            <Footer />
-            <CartDrawer />
-          </CartUIProvider>
+          <Header />
+          {children}
+          <Footer />
         </AnnouncerProvider>
       </body>
     </html>
