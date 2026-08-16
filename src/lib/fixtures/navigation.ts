@@ -5,7 +5,7 @@ import type { NavigationTree } from "@/lib/content/schemas/navigation";
 
 export const navigationFixture: NavigationTree = {
   primary: [
-    { label: "What’s coming", href: "/#collection" },
+    { label: "Our collection", href: "/#collection" },
     { label: "Our philosophy", href: "/#philosophy" },
     { label: "Contact", href: "mailto:info@aanuni.com" },
   ],
@@ -13,7 +13,7 @@ export const navigationFixture: NavigationTree = {
     {
       heading: "Explore",
       links: [
-        { label: "What’s coming", href: "/#collection" },
+        { label: "Our collection", href: "/#collection" },
         { label: "Our philosophy", href: "/#philosophy" },
       ],
     },
