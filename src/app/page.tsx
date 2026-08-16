@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 
@@ -32,6 +33,29 @@ const principles = [
   ["Less, but better", "Every line, material and interaction earns its place."],
   ["Power without pause", "Dependable performance for life in motion."],
   ["Made for every day", "Durable by design, intuitive from the first touch."],
+];
+
+const accessories = [
+  {
+    title: "Magnetic power",
+    category: "Phone accessories",
+    image: "/products/magnetic-power-bank.webp",
+  },
+  {
+    title: "GaN charging",
+    category: "Phone accessories",
+    image: "/products/gan-charger-cables.webp",
+  },
+  {
+    title: "Connected workspace",
+    category: "Computer accessories",
+    image: "/products/laptop-dock.webp",
+  },
+  {
+    title: "Wireless control",
+    category: "Computer accessories",
+    image: "/products/wireless-keyboard-mouse.webp",
+  },
 ];
 
 function ArrowIcon() {
@@ -176,6 +200,64 @@ export default function Home() {
             ))}
           </div>
         </Container>
+      </section>
+
+      <section
+        aria-labelledby="accessories-heading"
+        className="bg-midnight-900 overflow-hidden py-24 text-white sm:py-32"
+      >
+        <Container>
+          <div className="flex flex-col justify-between gap-8 sm:flex-row sm:items-end">
+            <div>
+              <p className="text-energy-500 text-xs font-semibold tracking-[0.2em] uppercase">
+                Phone &amp; computer accessories
+              </p>
+              <h2
+                id="accessories-heading"
+                className="mt-6 max-w-3xl text-4xl leading-[1.02] font-semibold tracking-[-0.045em] sm:text-6xl"
+              >
+                Made to move with every part of your day.
+              </h2>
+            </div>
+            <p className="max-w-sm text-sm leading-6 text-white/55 sm:text-right">
+              Thoughtful essentials for your phone, computer and everything in
+              between.
+            </p>
+          </div>
+        </Container>
+
+        <div className="accessory-marquee mt-14 sm:mt-20">
+          <div className="accessory-marquee__track">
+            {[...accessories, ...accessories].map((accessory, index) => (
+              <article
+                key={`${accessory.title}-${index}`}
+                aria-hidden={index >= accessories.length}
+                className="accessory-card overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.045]"
+              >
+                <div className="relative aspect-[3/2] overflow-hidden">
+                  <Image
+                    src={accessory.image}
+                    alt={index < accessories.length ? accessory.title : ""}
+                    fill
+                    sizes="(max-width: 640px) 82vw, 34rem"
+                    className="object-cover transition-transform duration-700 hover:scale-[1.025]"
+                  />
+                </div>
+                <div className="flex items-end justify-between gap-5 p-6 sm:p-7">
+                  <div>
+                    <p className="text-energy-500 text-[0.65rem] font-semibold tracking-[0.18em] uppercase">
+                      {accessory.category}
+                    </p>
+                    <h3 className="mt-2 text-xl font-semibold tracking-[-0.025em] sm:text-2xl">
+                      {accessory.title}
+                    </h3>
+                  </div>
+                  <span className="bg-energy-500 size-2 shrink-0 rounded-full shadow-[0_0_18px_var(--color-energy)]" />
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
       </section>
 
       <section
