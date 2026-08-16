@@ -4,7 +4,6 @@ import "./globals.css";
 import { AnnouncerProvider } from "@/components/a11y/Announcer";
 import { CartUIProvider } from "@/components/cart/CartUIProvider";
 import { CartDrawer } from "@/components/cart/CartDrawer";
-import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
@@ -32,7 +31,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </a>
         <AnnouncerProvider>
           <CartUIProvider>
-            <AnnouncementBar />
             <Header />
             {children}
             <Footer />
